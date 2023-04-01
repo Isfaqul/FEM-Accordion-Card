@@ -102,6 +102,10 @@ img {
   padding-right: 2em;
 }
 
+.faq::-webkit-details-marker {
+  display: none;
+}
+
 .faq:hover {
   color: var(--high-txt);
 }
