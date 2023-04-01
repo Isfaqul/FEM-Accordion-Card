@@ -1,0 +1,209 @@
+:root {
+  --main-bg-1: #af69e9;
+  --main-bg-2: #6262e7;
+  --white: #fff;
+  --main-txt: #1d1e35;
+  --sub-txt: #4a4b5e;
+  --gray-txt: #787887;
+  --line: #e7e7e9;
+  --high-txt: #f47c57;
+
+  --boldest: 700;
+  --normal: 400;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #af69ea 0%, #6262e7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+main {
+  width: 100%;
+}
+
+.main-card {
+  margin: 0 auto;
+  width: clamp(240px, 100%, 921px);
+  background-color: var(--white);
+  border-radius: 2.2em;
+  padding: 0 2.5em 2.5em 2.5em;
+  position: relative;
+}
+
+/* hero img styles */
+
+.container-1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  display: block;
+  /* max-width: 100%; */
+}
+
+.hero-img {
+  z-index: 2;
+  top: -105px;
+  position: absolute;
+  max-width: 240px;
+  position: absolute;
+}
+
+.bg-img {
+  z-index: 1;
+}
+
+.card-title {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-top: 0.9em;
+  color: var(--main-txt);
+}
+
+/* Accordion Styles */
+
+.accordion-container {
+  margin-top: 1.2em;
+  margin-bottom: 2.1em;
+}
+
+.faq-item {
+  font-size: 1.2rem;
+  padding: 1.5em 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.faq {
+  color: var(--sub-txt);
+  font-weight: 500;
+  list-style: none;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  position: relative;
+  padding-right: 2em;
+}
+
+.faq:hover {
+  color: var(--high-txt);
+}
+
+.faq-answer {
+  display: inline-block;
+  color: var(--gray-txt);
+  line-height: 150%;
+  padding-right: 1em;
+}
+
+/* Accordion pseudo styles */
+
+.faq-item[open] .faq {
+  font-weight: 700;
+  color: var(--main-txt);
+  padding: 0 2em 1em 0;
+  vertical-align: middle;
+}
+
+.faq::after {
+  content: "";
+  background-image: url("images/icon-arrow-down.svg");
+  width: 10px;
+  height: 10px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateY(0);
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+  transition: all 300ms ease-in-out;
+}
+
+/* Rotate arrow only when accordion is open */
+
+.faq-item[open] .faq::after {
+  vertical-align: middle;
+  transform: rotate(180deg) translateY(6px);
+}
+
+@media (min-width: 921px) {
+  .main-card {
+    display: flex;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    border-radius: 2.5em;
+  }
+  .card-title {
+    margin-top: 0;
+  }
+
+  .container-1 {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .container-2 {
+    padding: 7.3em 9.5em 7.3em 0;
+    width: 445px;
+  }
+
+  .bg-img {
+    position: absolute;
+    top: -282px;
+    left: -573px;
+  }
+  .hero-img {
+    max-width: 482px;
+    position: absolute;
+    top: 73px;
+    left: -81px;
+    height: auto;
+  }
+  .card-title {
+    text-align: left;
+  }
+  .faq-item {
+    font-size: 1.4rem;
+    padding: 1.1em 0;
+  }
+  .faq-answer {
+    font-size: 1.2rem;
+  }
+  .faq-item[open] .faq {
+    padding: 0 2em 1em 0;
+  }
+  .accordion-container {
+    margin-top: 2.2em;
+    margin-bottom: 0;
+  }
+  .floater {
+    display: inline-block;
+    background-image: url("images/illustration-box-desktop.svg");
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 5;
+    left: -93px;
+    top: 220px;
+  }
+}
